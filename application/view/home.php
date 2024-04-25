@@ -92,7 +92,7 @@
     <!-- Content -->
     <div class="">
         <!-- Hero section -->
-        <div class="bg-body-tertiary container hero-container py-4">
+        <div class="bg-body-tertiary hero-container p-5">
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="hero-text">
@@ -117,64 +117,64 @@
 
     </div>
 
-    <div class="row p-8">
-        <div class="col">
-            <div class="card">
-                <img class="card-img-top" src="assets/images/cocabrand.png" alt="coca cola brand">
-                <div class="card-body">
-                    <h5 class="card-title text-2xl font-bold ">Coca Cola</h5>
-                    <p class="card-text mb-4">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by
-                        simple
-                        curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was
-                        done, the mixture was combined with carbonated water and sampled by customers who all agreed
-                        - this new drink was something special!</p>
-                    <a href="https://www.coca-cola.com/gb/en/brands/coca-cola-original-taste"
-                        class="btn btn-danger">Visit Page</a>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="assets/images/cocabrand.png" alt="coca cola brand">
+                    <div class="card-body">
+                        <h5 class="card-title text-2xl font-bold ">Coca Cola</h5>
+                        <p class="card-text mb-4">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by
+                            simple
+                            curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was
+                            done, the mixture was combined with carbonated water and sampled by customers who all agreed
+                            - this new drink was something special!</p>
+                        <a href="https://www.coca-cola.com/gb/en/brands/coca-cola-original-taste"
+                            class="btn btn-danger">Visit Page</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img class="card-img-top" src="assets/images/fantadisplay.jpg" alt="Fanta">
-                <div class="card-body">
-                    <h5 class="card-title text-2xl font-bold ">Fanta</h5>
-                    <p class="card-text mb-4">There are more than 200 flavors worldwide. Fanta originated in Germany
-                        as a Coca-Cola alternative in 1941 due to the American trade embargo of Nazi Germany, which
-                        affected the availability of Coca-Cola ingredients. Fanta soon dominated the German market
-                        with three million cases sold in 1943.</p>
-                    <a href="https://www.coca-cola.com/gb/en/brands/fanta" class="btn btn-danger">Visit Page</a>
+            <div class="col">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="assets/images/fantadisplay.jpg" alt="Fanta">
+                    <div class="card-body">
+                        <h5 class="card-title text-2xl font-bold">Fanta</h5>
+                        <p class="card-text mb-4">There are more than 200 flavors worldwide. Fanta originated in Germany
+                            as a Coca-Cola alternative in 1941 due to the American trade embargo of Nazi Germany, which
+                            affected the availability of Coca-Cola ingredients. Fanta soon dominated the German market
+                            with three million cases sold in 1943.</p>
+                        <a href="https://www.coca-cola.com/gb/en/brands/fanta" class="btn btn-danger">Visit Page</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <img class="card-img-top" src="assets/images/spritedisplay.png" alt="Sprite">
-                <div class="card-body">
-                    <h5 class="card-title text-2xl font-bold ">Sprite</h5>
-                    <p class="card-text mb-4">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is
-                        now the world's leading lemon and lime flavoured soft drink and is sold in more than 190
-                        different countries. Sprite Zero, part of our no sugar Zero range, offers the delicious
-                        lemon lime taste of Sprite without the sugar or calories.</p>
-                    <a href="https://www.coca-cola.com/gb/en/brands/sprite" class="btn btn-danger">Visit Page</a>
+            <div class="col">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="assets/images/spritedisplay.png" alt="Sprite">
+                    <div class="card-body">
+                        <h5 class="card-title text-2xl font-bold">Sprite</h5>
+                        <p class="card-text mb-4">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is
+                            now the world's leading lemon and lime flavoured soft drink and is sold in more than 190
+                            different countries. Sprite Zero, part of our no sugar Zero range, offers the delicious
+                            lemon lime taste of Sprite without the sugar or calories.</p>
+                        <a href="https://www.coca-cola.com/gb/en/brands/sprite" class="btn btn-danger">Visit Page</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+
     <!-- footer -->
 
-    <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
-        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/"
-                    class="hover:underline">CocaCola™</a>. All Rights Reserved.
+    <footer class="shadow m-4">
+        <div class="d-flex flex-wrap justify-content-between align-items-center p-3 my-4">
+            <span class="text-sm d-flex">© 2024 <a href="https://www.coca-cola.com/gb/en"
+                    class="nav-link px-2 text-muted">CocaCola™</a>. All Rights Reserved.
             </span>
-            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6">About</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline">Contact</a>
-                </li>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="/home" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="/models" class="nav-link px-2 text-muted">Models</a></li>
+                <li class="nav-item"><a href="/about-us" class="nav-link px-2 text-muted">About</a></li>
             </ul>
         </div>
     </footer>
