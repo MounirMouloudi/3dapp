@@ -4,8 +4,9 @@ require 'model/model.php';
 require 'controller/controller.php';
 $pageURI = $_SERVER['REQUEST_URI'];
 $pageURI = substr($pageURI, strrpos($pageURI, 'index.php') + 10);
-if (!$pageURI)
+if (!$pageURI) {
     new Controller('home');
-else
+} else {
     new Controller($pageURI);
+}
 ?>

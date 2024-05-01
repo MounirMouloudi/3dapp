@@ -58,8 +58,9 @@
 </head>
 
 <body>
-    <!-- Navbar -->
     <?php include 'components/navbar.php'; ?>
+    <!-- Navbar -->
+
 
     <!-- Content -->
     <div class="">
@@ -73,7 +74,8 @@
                             Great Britain
                         </h1>
                         <h2 class="h2 font-weight-semibold text-secondary mb-4">
-                            Founded in 1886 Dr John S Pemberton
+                            On May 8, 1886, Dr. John Pemberton served the world’s first Coca‑Cola at Jacobs' Pharmacy in
+                            Atlanta, Ga. From that one iconic drink, we’ve evolved into a total beverage company.
                         </h2>
                         <p class="lead">
                             The Coca Cola Company is the world's leading manufacturer, marketer and distributor of
@@ -89,52 +91,6 @@
 
     </div>
 
-    <div class="container py-5">
-        <div class="row">
-            <div class="col">
-                <div class="card mb-2">
-                    <img class="card-img-top" src="/3dapp/assignment/assets/images/cocabrand.png" alt="coca cola brand">
-                    <div class="card-body">
-                        <h5 class="card-title text-2xl font-bold ">Coca Cola</h5>
-                        <p class="card-text mb-4">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by
-                            simple
-                            curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was
-                            done, the mixture was combined with carbonated water and sampled by customers who all agreed
-                            - this new drink was something special!</p>
-                        <a href="https://www.coca-cola.com/gb/en/brands/coca-cola-original-taste"
-                            class="btn btn-danger">Visit Page</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-2">
-                    <img class="card-img-top" src="/3dapp/assignment/assets/images/fantadisplay.jpg" alt="Fanta">
-                    <div class="card-body">
-                        <h5 class="card-title text-2xl font-bold">Fanta</h5>
-                        <p class="card-text mb-4">There are more than 200 flavors worldwide. Fanta originated in Germany
-                            as a Coca-Cola alternative in 1941 due to the American trade embargo of Nazi Germany, which
-                            affected the availability of Coca-Cola ingredients. Fanta soon dominated the German market
-                            with three million cases sold in 1943.</p>
-                        <a href="https://www.coca-cola.com/gb/en/brands/fanta" class="btn btn-danger">Visit Page</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card mb-2">
-                    <img class="card-img-top" src="/3dapp/assignment/assets/images/spritedisplay.png" alt="Sprite">
-                    <div class="card-body">
-                        <h5 class="card-title text-2xl font-bold">Sprite</h5>
-                        <p class="card-text mb-4">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is
-                            now the world's leading lemon and lime flavoured soft drink and is sold in more than 190
-                            different countries. Sprite Zero, part of our no sugar Zero range, offers the delicious
-                            lemon lime taste of Sprite without the sugar or calories.</p>
-                        <a href="https://www.coca-cola.com/gb/en/brands/sprite" class="btn btn-danger">Visit Page</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- footer -->
     <?php include 'components/footer.php'; ?>
@@ -146,7 +102,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-    <script src="3dapp/assignment/js/bootstrap.js"></script>
+    <script src="/3dapp/assignment/js/bootstrap.js"></script>
 </body>
 
 </html>

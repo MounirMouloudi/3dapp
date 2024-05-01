@@ -14,8 +14,23 @@ class Controller
 
     function home()
     {
-        // $data = $this->model->model3D_info();
         $this->load->view('home');
+    }
+
+    function about()
+    {
+        $this->load->view('about');
+    }
+
+    function models()
+    {
+        $this->load->view('models');
+    }
+
+    function test()
+    {
+        $data = $this->model->model3D_info();
+        $this->load->view('view3DAppTest_2', $data);
     }
 
     function apiCreateTable()
