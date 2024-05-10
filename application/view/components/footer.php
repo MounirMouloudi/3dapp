@@ -4,10 +4,13 @@
                 class="nav-link px-2 text-muted">CocaCola™</a>. All Rights Reserved.
         </span>
         <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="/3dapp/assignment/index.php" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="/3dapp/assignment/index.php/models"
+            <li class="nav-item"><a href="../../../3dapp/assignment/index.php/home"
+                    class="nav-link px-2 text-muted">Home</a>
+            </li>
+            <li class="nav-item"><a href="../../../3dapp/assignment/index.php/models"
                     class="nav-link px-2 text-muted">Models</a></li>
-            <li class="nav-item"><a href="/3dapp/assignment/index.php/about" class="nav-link px-2 text-muted">About</a>
+            <li class="nav-item"><a href="../../../3dapp/assignment/index.php/about"
+                    class="nav-link px-2 text-muted">About</a>
             </li>
         </ul>
     </div>

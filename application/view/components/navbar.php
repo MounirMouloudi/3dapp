@@ -14,13 +14,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/3dapp/assignment/index.php">Home</a>
+                    <a class="nav-link" aria-current="page" href="../../../3dapp/assignment/index.php/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/3dapp/assignment/index.php/models">Models</a>
+                    <a class="nav-link" href="../../../3dapp/assignment/index.php/models">Models</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/3dapp/assignment/index.php/about">About Us</a>
+                    <a class="nav-link" href="../../../3dapp/assignment/index.php/about">About Us</a>
                 </li>
             </ul>
         </div>

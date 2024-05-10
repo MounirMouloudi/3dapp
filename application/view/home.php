@@ -39,7 +39,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="/3dapp/assignment/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../../3dapp/assignment/css/bootstrap.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -59,6 +59,7 @@
 
 <body>
     <!-- Navbar -->
+    <!-- No need to use the component in here to solve the problem of loading files -->
     <?php include 'components/navbar.php'; ?>
 
     <!-- Content -->
@@ -82,7 +83,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-fluid" src="/3dapp/assignment/assets/images/hero.jpg" alt="hero image">
+                    <img class="img-fluid" src="../../../3dapp/assignment/assets/images/hero.jpg" alt="hero image">
                 </div>
             </div>
         </div>
@@ -93,7 +94,8 @@
         <div class="row">
             <div class="col">
                 <div class="card mb-2">
-                    <img class="card-img-top" src="/3dapp/assignment/assets/images/cocabrand.png" alt="coca cola brand">
+                    <img class="card-img-top" src="../../../3dapp/assignment/assets/images/cocabrand.png"
+                        alt="coca cola brand">
                     <div class="card-body">
                         <h5 class="card-title text-2xl font-bold ">Coca Cola</h5>
                         <p class="card-text mb-4">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by
@@ -108,7 +110,8 @@
             </div>
             <div class="col">
                 <div class="card mb-2">
-                    <img class="card-img-top" src="/3dapp/assignment/assets/images/fantadisplay.jpg" alt="Fanta">
+                    <img class="card-img-top" src="../../../3dapp/assignment/assets/images/fantadisplay.jpg"
+                        alt="Fanta">
                     <div class="card-body">
                         <h5 class="card-title text-2xl font-bold">Fanta</h5>
                         <p class="card-text mb-4">There are more than 200 flavors worldwide. Fanta originated in Germany
@@ -121,7 +124,8 @@
             </div>
             <div class="col">
                 <div class="card mb-2">
-                    <img class="card-img-top" src="/3dapp/assignment/assets/images/spritedisplay.png" alt="Sprite">
+                    <img class="card-img-top" src="../../../3dapp/assignment/assets/images/spritedisplay.png"
+                        alt="Sprite">
                     <div class="card-body">
                         <h5 class="card-title text-2xl font-bold">Sprite</h5>
                         <p class="card-text mb-4">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is
@@ -146,7 +150,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-    <script src="3dapp/assignment/js/bootstrap.js"></script>
+    <script src="../../../3dapp/assignment/js/bootstrap.js"></script>
 </body>
 
 </html>
