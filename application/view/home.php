@@ -97,12 +97,8 @@
                     <img class="card-img-top" src="../../../3dapp/assignment/assets/images/cocabrand.png"
                         alt="coca cola brand">
                     <div class="card-body">
-                        <h5 class="card-title text-2xl font-bold ">Coca Cola</h5>
-                        <p class="card-text mb-4">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by
-                            simple
-                            curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was
-                            done, the mixture was combined with carbonated water and sampled by customers who all agreed
-                            - this new drink was something special!</p>
+                        <h5 class="card-title text-2xl font-bold "><?php echo $data[0]['modelSubtitle'] ?></h5>
+                        <p class="card-text mb-4"><?php echo $data[0]['modelDescription'] ?></p>
                         <a href="https://www.coca-cola.com/gb/en/brands/coca-cola-original-taste"
                             class="btn btn-danger">Visit Page</a>
                     </div>
@@ -110,14 +106,10 @@
             </div>
             <div class="col">
                 <div class="card mb-2">
-                    <img class="card-img-top" src="../../../3dapp/assignment/assets/images/fantadisplay.jpg"
-                        alt="Fanta">
+                    <img class="card-img-top" src="../../../3dapp/assignment/assets/images/cokezero.webp" alt="Fanta">
                     <div class="card-body">
-                        <h5 class="card-title text-2xl font-bold">Fanta</h5>
-                        <p class="card-text mb-4">There are more than 200 flavors worldwide. Fanta originated in Germany
-                            as a Coca-Cola alternative in 1941 due to the American trade embargo of Nazi Germany, which
-                            affected the availability of Coca-Cola ingredients. Fanta soon dominated the German market
-                            with three million cases sold in 1943.</p>
+                        <h5 class="card-title text-2xl font-bold "><?php echo $data[1]['modelSubtitle'] ?></h5>
+                        <p class="card-text mb-4"><?php echo $data[1]['modelDescription'] ?></p>
                         <a href="https://www.coca-cola.com/gb/en/brands/fanta" class="btn btn-danger">Visit Page</a>
                     </div>
                 </div>
@@ -127,11 +119,8 @@
                     <img class="card-img-top" src="../../../3dapp/assignment/assets/images/spritedisplay.png"
                         alt="Sprite">
                     <div class="card-body">
-                        <h5 class="card-title text-2xl font-bold">Sprite</h5>
-                        <p class="card-text mb-4">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is
-                            now the world's leading lemon and lime flavoured soft drink and is sold in more than 190
-                            different countries. Sprite Zero, part of our no sugar Zero range, offers the delicious
-                            lemon lime taste of Sprite without the sugar or calories.</p>
+                        <h5 class="card-title text-2xl font-bold "><?php echo $data[2]['modelSubtitle'] ?></h5>
+                        <p class="card-text mb-4"><?php echo $data[2]['modelDescription'] ?></p>
                         <a href="https://www.coca-cola.com/gb/en/brands/sprite" class="btn btn-danger">Visit Page</a>
                     </div>
                 </div>

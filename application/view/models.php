@@ -37,6 +37,25 @@
             margin-top: 20px;
             margin-left: 8px;
         }
+
+        .hidden {
+            display: none;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .full-height {
+            min-height: 60vh;
+        }
+
+        .center-items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 
     <link rel="stylesheet" href="../../../3dapp/assignment/css/bootstrap.css" />
@@ -65,57 +84,92 @@
 
 
     <!-- Content -->
-    <div class="">
-        <!-- Hero section -->
-        <div class="bg-body-tertiary hero-container p-5">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="hero-text">
-                        <h1 class="display-4 text-danger font-weight-bold mb-2">
-                            Coca Cola
-                            Great Britain
-                        </h1>
-                    </div>
-                    <x3d id="wire" width="400px" height="400px">
-                        <scene>
-                            <Switch whichChoice="0" id='SceneSwitch'>
-                                <transform id="modelTransform">
-                                    <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();"
-                                        url="../assets/x3d/cokeloca.x3d"> </inline>
-                                </transform>
-                                <transform>
-                                    <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();"
-                                        url="assets/x3d/fanta.x3d"> </inline>
-                                </transform>
-                                <transform>
-                                    <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();"
-                                        url="/assets/x3d/sprite.x3d"> </inline>
-                                </transform>
-                            </Switch>
-                        </scene>
-                    </x3d>
+    <div class="container mt-4 full-height">
+        <div class="row">
+            <div class="col-md-6 center-items">
+                <!-- Title and Buttons for Models -->
+                <div class="hero-text">
+                    <h1 class="display-4 text-danger font-weight-bold mb-2">
+                        Coca Cola Great Britain
+                    </h1>
                 </div>
 
-                <div class="col-md-6">
-                    <a href="#" class="btn btn-outline-dark" onclick="toggleWireFrame()">Wire</a>
+                <div class="mb-2 mt-4">
+                    <div class="btn-group" role="group" aria-label="Model selection">
+                        <button onclick="showCoke()" type="button" class="btn btn-primary">Coca Cola</button>
+                        <button onclick="showZero()" type="button" class="btn btn-primary">Cola Diet</button>
+                        <button onclick="showSprite()" type="button" class="btn btn-primary">Sprite</button>
+                    </div>
+                </div>
+
+
+
+                <!-- 3D Models -->
+                <x3d id="div1" width="500px" height="500px">
+                    <scene>
+                        <transform>
+                            <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();"
+                                url="../assets/x3d/coke.x3d"> </inline>
+                        </transform>
+                    </scene>
+                </x3d>
+                <x3d id="div2" width="400px" height="400px" class="hidden">
+                    <scene>
+                        <transform>
+                            <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();"
+                                url="../assets/x3d/colazero.x3d"> </inline>
+                        </transform>
+                    </scene>
+                </x3d>
+                <x3d id="div3" width="400px" height="400px" class="hidden">
+                    <scene>
+                        <transform>
+                            <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();"
+                                url="../assets/x3d/sprite.x3d"> </inline>
+                        </transform>
+                    </scene>
+                </x3d>
+
+                <!-- Model Control Buttons -->
+                <div class="mt-2">
+                    <a href="#" class="btn btn-outline-dark" onclick="toggleWireFrame(1)">Wire</a>
                     <a href="#" class="btn btn-outline-dark" onclick="rotateModel()">left</a>
                     <a href="#" class="btn btn-outline-dark" onclick="cameraFront()">cameraFront</a>
                 </div>
-
-
-
             </div>
-        </div>
 
+
+            <div class="col-md-6 center-items">
+                <?php for ($i = 0; $i < count($data); $i++) { ?>
+                    <!-- Description -->
+                    <div class="description mt-4 hidden" id="model-<?php echo $i + 1; ?>">
+                        <h1><?php echo $data[$i]['x3dModelTitle'] ?></h1>
+                        <h4><?php echo $data[$i]['modelSubtitle'] ?></h4>
+                        <p>
+                            <?php echo $data[$i]['modelDescription'] ?>
+                        </p>
+                    </div>
+                <?php } ?>
+            </div>
+
+
+
+        </div>
     </div>
+
+
 
 
     <!-- footer -->
     <?php include 'components/footer.php'; ?>
 
     <script>
-        function toggleWireFrame() {
-            var x3dElement = document.getElementById('wire');
+        window.onload = function () {
+            document.getElementById('model-1').classList.remove('hidden');
+        }
+        let n = 1;
+        function toggleWireFrame(number) {
+            var x3dElement = document.getElementById('div' + n);
 
             x3dElement.runtime.togglePoints(true);
             x3dElement.runtime.togglePoints(true);
@@ -146,6 +200,39 @@
             document.getElementById('model__CameraLeft').setAttribute('bind', 'true');
         }
 
+        function showCoke() {
+            document.getElementById('div1').classList.remove('hidden');
+            document.getElementById('div2').classList.add('hidden');
+            document.getElementById('div3').classList.add('hidden');
+
+            document.getElementById('model-1').classList.remove('hidden');
+            document.getElementById('model-2').classList.add('hidden');
+            document.getElementById('model-3').classList.add('hidden');
+            n = 1;
+        }
+
+        function showZero() {
+            document.getElementById('div2').classList.remove('hidden');
+            document.getElementById('div1').classList.add('hidden');
+            document.getElementById('div3').classList.add('hidden');
+
+            document.getElementById('model-2').classList.remove('hidden');
+            document.getElementById('model-1').classList.add('hidden');
+            document.getElementById('model-3').classList.add('hidden');
+            n = 2;
+        }
+
+        function showSprite() {
+            document.getElementById('div3').classList.remove('hidden');
+            document.getElementById('div1').classList.add('hidden');
+            document.getElementById('div2').classList.add('hidden');
+
+            document.getElementById('model-3').classList.remove('hidden');
+            document.getElementById('model-1').classList.add('hidden');
+            document.getElementById('model-2').classList.add('hidden');
+            n = 3;
+        }
+
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -159,3 +246,23 @@
 </body>
 
 </html>
+
+<!-- 
+<x3d id="wire" width="400px" height="400px">
+                        <scene>
+                            <Switch whichChoice="0" id='SceneSwitch'>
+                                <transform id="modelTransform1">
+                                    <inline nameSpaceName="model1" mapDEFToID="true" onclick="animateModel();"
+                                        url="../assets/x3d/coke.x3d"></inline>
+                                </transform>
+                                <transform id="modelTransform2">
+                                    <inline nameSpaceName="model2" mapDEFToID="true" onclick="animateModel();"
+                                        url="assets/x3d/colazero.x3d"></inline>
+                                </transform>
+                                <transform id="modelTransform3">
+                                    <inline nameSpaceName="model3" mapDEFToID="true" onclick="animateModel();"
+                                        url="/assets/x3d/sprite.x3d"></inline>
+                                </transform>
+                            </Switch>
+                        </scene>
+                    </x3d> -->

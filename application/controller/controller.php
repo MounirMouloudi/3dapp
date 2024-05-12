@@ -14,7 +14,8 @@ class Controller
 
     function home()
     {
-        $this->load->view('home');
+        $data = $this->model->dbGetData();
+        $this->load->view('home', $data);
     }
 
     function about()
@@ -24,7 +25,8 @@ class Controller
 
     function models()
     {
-        $this->load->view('models');
+        $data = $this->model->dbGetData();
+        $this->load->view('models', $data);
     }
 
     function test()

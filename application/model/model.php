@@ -27,7 +27,7 @@ class Model
     public function dbCreateTable()
     {
         try {
-            $this->dbhandle->exec("CREATE TABLE Model_3D (Id INTEGER PRIMARY KEY, x3dModelTitle TEXT, x3dCreationMethod TEXT, modelTitle TEXT, modelSubtitle TEXT, modelDescription TEXT)");
+            $this->dbhandle->exec("CREATE TABLE Model_3D (Id INTEGER PRIMARY KEY, x3dModelTitle TEXT, modelSubtitle TEXT, modelDescription TEXT)");
             return "Model_3D table is successfully created";
         } catch (PDOEXception $e) {
             print new Exception($e->getMessage());
@@ -39,12 +39,12 @@ class Model
     {
         try {
             $this->dbhandle->exec(
-                "INSERT INTO Model_3D (Id, x3dModelTitle, x3dCreationMethod, modelTitle, modelSubtitle, modelDescription) 
-				VALUES (1, 'X3D Coke Model', 'string_2', 'string_3','string_4','string_5'); " .
-                "INSERT INTO Model_3D (Id, x3dModelTitle, x3dCreationMethod, modelTitle, modelSubtitle, modelDescription) 
-				VALUES (2, 'X3D Sprite Model', 'string_2', 'string_3','string_4','string_5'); " .
-                "INSERT INTO Model_3D (Id, x3dModelTitle, x3dCreationMethod, modelTitle, modelSubtitle, modelDescription) 
-				VALUES (3, 'X3D Pepper Model', 'string_2', 'string_3','string_4','string_5'); "
+                "INSERT INTO Model_3D (Id, x3dModelTitle, modelSubtitle, modelDescription) 
+                VALUES (1, 'X3D Coka Cola Model', 'Coca Cola', 'It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special!'); " .
+                "INSERT INTO Model_3D (Id, x3dModelTitle, modelSubtitle, modelDescription) 
+                VALUES (2, 'X3D Coke Zero Model', 'Coke Zero', 'The drink was introduced in 2005 as Coca-Cola Zero as a new no-calorie cola. In 2017, the formula was modified and the name updated, a change which led to some backlash. Another formula change occurred in the United Kingdom in July 2021, in the United States in August 2021, and in Canada in September 2021.'); " .
+                "INSERT INTO Model_3D (Id, x3dModelTitle, modelSubtitle, modelDescription) 
+                VALUES (3, 'X3D Sprite Model', 'Sprite', 'First introduced in 1961, crisp, refreshing, clean-tasting Sprite is now the worlds leading lemon and lime flavoured soft drink and is sold in more than 190 different countries. Sprite Zero, part of our no sugar Zero range, offers the delicious lemon lime taste of Sprite without the sugar or calories.'); "
             );
             return "X3D model data inserted successfully inside db";
         } catch (PDOEXception $e) {
@@ -71,8 +71,6 @@ class Model
                 // echo '</br>' . $data['x3dModelTitle'];
                 // Write the database conetnts to the results array for sending back to the view
                 $result[$i]['x3dModelTitle'] = $data['x3dModelTitle'];
-                $result[$i]['x3dCreationMethod'] = $data['x3dCreationMethod'];
-                $result[$i]['modelTitle'] = $data['modelTitle'];
                 $result[$i]['modelSubtitle'] = $data['modelSubtitle'];
                 $result[$i]['modelDescription'] = $data['modelDescription'];
                 //increment the row index
