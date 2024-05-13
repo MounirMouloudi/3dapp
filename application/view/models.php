@@ -58,7 +58,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="../../../3dapp/assignment/css/bootstrap.css" />
+    <link rel="stylesheet" href="/~mm2467@sussex.ac.uk/3dapp/assignment/css/bootstrap.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -74,7 +74,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;500&family=Lobster&family=Maven+Pro:wght@400..900&family=Open+Sans:wght@300;400;500;600&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel='stylesheet' type='text/css' href='../../../3dapp/assignment/css/x3dom.css'>
+    <link rel='stylesheet' type='text/css' href='/~mm2467@sussex.ac.uk/3dapp/assignment/css/x3dom.css'>
     </link>
 </head>
 
@@ -105,36 +105,43 @@
 
 
                 <!-- 3D Models -->
-                <x3d id="div1" width="500px" height="500px">
+                <x3d id="cokex3d" width="500px" height="500px">
                     <scene>
                         <transform>
-                            <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();"
-                                url="../assets/x3d/coke.x3d"> </inline>
+                            <inline nameSpaceName="cokex3d" mapDEFToID="true" onclick="animateModel();"
+                                url="/~mm2467@sussex.ac.uk/3dapp/assignment/assets/x3d/coke.x3d"> </inline>
                         </transform>
                     </scene>
                 </x3d>
-                <x3d id="div2" width="400px" height="400px" class="hidden">
+                <x3d id="cokezerox3d" width="400px" height="400px" class="hidden">
                     <scene>
                         <transform>
-                            <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();"
-                                url="../assets/x3d/colazero.x3d"> </inline>
+                            <inline nameSpaceName="cokezerox3d" mapDEFToID="true" onclick="animateModel();"
+                                url="/~mm2467@sussex.ac.uk/3dapp/assignment/assets/x3d/colazero.x3d"> </inline>
                         </transform>
                     </scene>
                 </x3d>
-                <x3d id="div3" width="400px" height="400px" class="hidden">
+                <x3d id="spritex3d" width="400px" height="400px" class="hidden">
                     <scene>
                         <transform>
-                            <inline nameSpaceName="model" mapDEFToID="true" onclick="animateModel();"
-                                url="../assets/x3d/sprite.x3d"> </inline>
+                            <inline nameSpaceName="spritex3d" mapDEFToID="true" onclick="animateModel();"
+                                url="/~mm2467@sussex.ac.uk/3dapp/assignment/assets/x3d/sprite.x3d"> </inline>
                         </transform>
                     </scene>
                 </x3d>
 
                 <!-- Model Control Buttons -->
                 <div class="mt-2">
-                    <a href="#" class="btn btn-outline-dark" onclick="toggleWireFrame(1)">Wire</a>
-                    <a href="#" class="btn btn-outline-dark" onclick="rotateModel()">left</a>
+                    <a href="#" class="btn btn-outline-dark" onclick="toggleWireFrame()">Wire</a>
                     <a href="#" class="btn btn-outline-dark" onclick="cameraFront()">cameraFront</a>
+                    <a href="#" class="btn btn-outline-dark" onclick="cameraTop()">cameraTop</a>
+                    <a href="#" class="btn btn-outline-dark" onclick="cameraBack()">cameraBack</a>
+                    <a href="#" class="btn btn-outline-dark" onclick="rotate()">Animate</a>
+                    <a href="#" class="btn btn-outline-dark" onclick="stopAnimation()">stop</a>
+                    <a href="#" class="btn btn-outline-dark" onclick="headLight()">Head Light</a>
+                    <a href="#" class="btn btn-outline-dark" onclick="omniLight()">Omni Light</a>
+                    <a href="#" class="btn btn-outline-dark" onclick="backLight()">Back Light</a>
+                    <a href="#" class="btn btn-outline-dark" onclick="turnAllOff()">Turn All Off</a>
                 </div>
             </div>
 
@@ -167,43 +174,42 @@
         window.onload = function () {
             document.getElementById('model-1').classList.remove('hidden');
         }
-        let n = 1;
-        function toggleWireFrame(number) {
-            var x3dElement = document.getElementById('div' + n);
+        function toggleWireFrame() {
+            var cokex3d = document.getElementById('cokex3d');
+            var fantax3d = document.getElementById('cokezerox3d');
+            var costax3d = document.getElementById('spritex3d');
 
-            x3dElement.runtime.togglePoints(true);
-            x3dElement.runtime.togglePoints(true);
-        }
+            cokex3d.runtime.togglePoints(true);
+            cokex3d.runtime.togglePoints(true);
 
-        function animateModel() {
-            if (document.getElementById('wire').getAttribute('enabled') != 'true')
-                document.getElementById('wire').setAttribute('enabled', 'true');
-            else
-                document.getElementById('wire').setAttribute('enabled', 'false');
-        }
+            cokezerox3d.runtime.togglePoints(true);
+            cokezerox3d.runtime.togglePoints(true);
 
-        function rotateModel(direction) {
-            var transform = document.getElementById('modelTransform');
-            var currentRotation = transform.getAttribute('rotation');
-            if (!currentRotation) {
-                // Set a default rotation if none exists
-                transform.setAttribute('rotation', '0 1 1 0');
-                currentRotation = '0 1 1 0';
-            }
+            spritex3d.runtime.togglePoints(true);
+            spritex3d.runtime.togglePoints(true);
         }
 
         function cameraFront() {
-            document.getElementById('model__CameraFront').setAttribute('bind', 'true');
+            document.getElementById('cokex3d__View_FrontCamera').setAttribute('bind', 'true');
+            document.getElementById('cokezerox3d__View_FrontCamera').setAttribute('bind', 'true');
+            document.getElementById('spritex3d__View_FrontCamera').setAttribute('bind', 'true');
+        }
+        function cameraTop() {
+            document.getElementById('cokex3d__View_TopCamera').setAttribute('bind', 'true');
+            document.getElementById('cokezerox3d__View_TopCamera').setAttribute('bind', 'true');
+            document.getElementById('spritex3d__View_TopCamera').setAttribute('bind', 'true');
         }
 
-        function cameraLeft() {
-            document.getElementById('model__CameraLeft').setAttribute('bind', 'true');
+        function cameraBack() {
+            document.getElementById('cokex3d__View_BackCamera').setAttribute('bind', 'true');
+            document.getElementById('cokezerox3d__View_BackCamera').setAttribute('bind', 'true');
+            document.getElementById('spritex3d__View_BackCamera').setAttribute('bind', 'true');
         }
 
         function showCoke() {
-            document.getElementById('div1').classList.remove('hidden');
-            document.getElementById('div2').classList.add('hidden');
-            document.getElementById('div3').classList.add('hidden');
+            document.getElementById('cokex3d').classList.remove('hidden');
+            document.getElementById('cokezerox3d').classList.add('hidden');
+            document.getElementById('spritex3d').classList.add('hidden');
 
             document.getElementById('model-1').classList.remove('hidden');
             document.getElementById('model-2').classList.add('hidden');
@@ -212,9 +218,9 @@
         }
 
         function showZero() {
-            document.getElementById('div2').classList.remove('hidden');
-            document.getElementById('div1').classList.add('hidden');
-            document.getElementById('div3').classList.add('hidden');
+            document.getElementById('cokezerox3d').classList.remove('hidden');
+            document.getElementById('cokex3d').classList.add('hidden');
+            document.getElementById('spritex3d').classList.add('hidden');
 
             document.getElementById('model-2').classList.remove('hidden');
             document.getElementById('model-1').classList.add('hidden');
@@ -223,15 +229,76 @@
         }
 
         function showSprite() {
-            document.getElementById('div3').classList.remove('hidden');
-            document.getElementById('div1').classList.add('hidden');
-            document.getElementById('div2').classList.add('hidden');
+            document.getElementById('spritex3d').classList.remove('hidden');
+            document.getElementById('cokex3d').classList.add('hidden');
+            document.getElementById('cokezerox3d').classList.add('hidden');
 
             document.getElementById('model-3').classList.remove('hidden');
             document.getElementById('model-1').classList.add('hidden');
             document.getElementById('model-2').classList.add('hidden');
             n = 3;
         }
+
+        var spinning = false;
+
+        function rotate() {
+            spinning = !spinning;
+            document.getElementById('cokex3d__Timer').setAttribute('enabled', spinning.toString());
+            document.getElementById('cokezerox3d__Timer').setAttribute('enabled', spinning.toString());
+            document.getElementById('spritex3d__Timer').setAttribute('enabled', spinning.toString());
+
+        }
+
+        function stopAnimation() {
+            spinning = false;
+            document.getElementById('cokex3d__Timer').setAttribute('enabled', spinning.toString());
+            document.getElementById('cokezerox3d__Timer').setAttribute('enabled', spinning.toString());
+            document.getElementById('spritex3d__Timer').setAttribute('enabled', spinning.toString());
+        }
+
+
+        var lightOn1 = true;
+        var lightOn2 = true;
+        var lightOn3 = true;
+
+        function omniLight() {
+
+            document.getElementById('cokex3d__LIGHT_LIGHT_Light').setAttribute('on', lightOn1.toString());
+            document.getElementById('cokezerox3d__LIGHT_LIGHT_Light').setAttribute('on', lightOn1.toString());
+            document.getElementById('spritex3d__LIGHT_LIGHT_Light').setAttribute('on', lightOn1.toString());
+
+        }
+
+        function headLight() {
+            lightOn2 = !lightOn2
+            document.getElementById('cokex3d__LIGHT_LIGHT_Light_1').setAttribute('on', lightOn2.toString());
+            document.getElementById('cokezerox3d__LIGHT_LIGHT_Light_1').setAttribute('on', lightOn2.toString());
+            document.getElementById('spritex3d__LIGHT_LIGHT_Light_1').setAttribute('on', lightOn2.toString());
+
+        }
+        function backLight() {
+            lightOn3 = !lightOn3
+            document.getElementById('cokex3d__LIGHT_LIGHT_Light_2').setAttribute('on', lightOn3.toString());
+            document.getElementById('cokezerox3d__LIGHT_LIGHT_Light_2').setAttribute('on', lightOn3.toString());
+            document.getElementById('spritex3d__LIGHT_LIGHT_Light_2').setAttribute('on', lightOn3.toString());
+
+        }
+
+
+        function turnAllOff() {
+            document.getElementById('cokex3d__LIGHT_LIGHT_Light').setAttribute('on', 'false');
+            document.getElementById('cokex3d__LIGHT_LIGHT_Light_1').setAttribute('on', 'false');
+            document.getElementById('cokex3d__LIGHT_LIGHT_Light_2').setAttribute('on', 'false');
+
+            document.getElementById('cokezerox3d__LIGHT_LIGHT_Light').setAttribute('on', 'false');
+            document.getElementById('cokezerox3d__LIGHT_LIGHT_Light_1').setAttribute('on', 'false');
+            document.getElementById('cokezerox3d__LIGHT_LIGHT_Light_2').setAttribute('on', 'false');
+
+            document.getElementById('spritex3d__LIGHT_LIGHT_Light').setAttribute('on', 'false');
+            document.getElementById('spritex3d__LIGHT_LIGHT_Light_1').setAttribute('on', 'false');
+            document.getElementById('spritex3d__LIGHT_LIGHT_Light_2').setAttribute('on', 'false');
+        }
+
 
     </script>
 
@@ -241,28 +308,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-    <script src="../../../3dapp/assignment/js/bootstrap.js"></script>
-    <script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+    <script src="/~mm2467@sussex.ac.uk/3dapp/assignment/js/bootstrap.js"></script>
+    <script type='text/javascript' src='https://www.x3dom.org/x3dom/release/x3dom.js'></script>
 </body>
 
 </html>
-
-<!-- 
-<x3d id="wire" width="400px" height="400px">
-                        <scene>
-                            <Switch whichChoice="0" id='SceneSwitch'>
-                                <transform id="modelTransform1">
-                                    <inline nameSpaceName="model1" mapDEFToID="true" onclick="animateModel();"
-                                        url="../assets/x3d/coke.x3d"></inline>
-                                </transform>
-                                <transform id="modelTransform2">
-                                    <inline nameSpaceName="model2" mapDEFToID="true" onclick="animateModel();"
-                                        url="assets/x3d/colazero.x3d"></inline>
-                                </transform>
-                                <transform id="modelTransform3">
-                                    <inline nameSpaceName="model3" mapDEFToID="true" onclick="animateModel();"
-                                        url="/assets/x3d/sprite.x3d"></inline>
-                                </transform>
-                            </Switch>
-                        </scene>
-                    </x3d> -->

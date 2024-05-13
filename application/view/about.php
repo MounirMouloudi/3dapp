@@ -39,7 +39,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="../../../3dapp/assignment/css/bootstrap.css" />
+    <link rel="stylesheet" href="/~mm2467@sussex.ac.uk/3dapp/assignment/css/bootstrap.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -84,7 +84,8 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-fluid" src="../../../3dapp/assignment/assets/images/hero.jpg" alt="hero image">
+                    <img class="img-fluid" src="/~mm2467@sussex.ac.uk/3dapp/assignment/assets/images/hero.jpg"
+                        alt="hero image">
                 </div>
             </div>
         </div>
@@ -102,7 +103,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-    <script src="../../../3dapp/assignment/js/bootstrap.js"></script>
+    <script src="/~mm2467@sussex.ac.uk/3dapp/assignment/js/bootstrap.js"></script>
 </body>
 
 </html>
